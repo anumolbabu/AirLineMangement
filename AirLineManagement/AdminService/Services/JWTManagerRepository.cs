@@ -1,5 +1,5 @@
-﻿using AdminService.Models;
-using AdminService.ViewModels;
+﻿using AdminService.ViewModels;
+using CoreModels.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -20,6 +20,8 @@ namespace AdminService.Services
         {
             _configuration = configuration;
         }
+
+
         public Tokens Authenticate(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

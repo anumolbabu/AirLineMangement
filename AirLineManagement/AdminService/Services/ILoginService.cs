@@ -1,4 +1,4 @@
-﻿using AdminService.Models;
+﻿using CoreModels.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

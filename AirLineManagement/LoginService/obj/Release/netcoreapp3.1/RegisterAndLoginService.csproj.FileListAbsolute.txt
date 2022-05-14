@@ -1,0 +1,6 @@
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.csproj.AssemblyReference.cache
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.GeneratedMSBuildEditorConfig.editorconfig
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.AssemblyInfoInputs.cache
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.AssemblyInfo.cs
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.csproj.CoreCompileInputs.cache
+D:\CaseStudy\AirLineManagement\LoginService\obj\Release\netcoreapp3.1\RegisterAndLoginService.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,12 @@
+D:\CaseStudy\AirLineManagement\CoreModels\bin\Release\netcoreapp3.1\CoreModels.deps.json
+D:\CaseStudy\AirLineManagement\CoreModels\bin\Release\netcoreapp3.1\CoreModels.runtimeconfig.json
+D:\CaseStudy\AirLineManagement\CoreModels\bin\Release\netcoreapp3.1\CoreModels.runtimeconfig.dev.json
+D:\CaseStudy\AirLineManagement\CoreModels\bin\Release\netcoreapp3.1\CoreModels.dll
+D:\CaseStudy\AirLineManagement\CoreModels\bin\Release\netcoreapp3.1\CoreModels.pdb
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.AssemblyInfoInputs.cache
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.AssemblyInfo.cs
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.csproj.CoreCompileInputs.cache
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.dll
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.pdb
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.genruntimeconfig.cache

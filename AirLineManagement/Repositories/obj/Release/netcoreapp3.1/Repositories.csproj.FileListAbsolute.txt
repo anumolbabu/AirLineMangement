@@ -1,0 +1,13 @@
+D:\CaseStudy\AirLineManagement\Repositories\bin\Release\netcoreapp3.1\Repositories.deps.json
+D:\CaseStudy\AirLineManagement\Repositories\bin\Release\netcoreapp3.1\Repositories.dll
+D:\CaseStudy\AirLineManagement\Repositories\bin\Release\netcoreapp3.1\Repositories.pdb
+D:\CaseStudy\AirLineManagement\Repositories\bin\Release\netcoreapp3.1\CoreModels.dll
+D:\CaseStudy\AirLineManagement\Repositories\bin\Release\netcoreapp3.1\CoreModels.pdb
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.csproj.AssemblyReference.cache
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.AssemblyInfoInputs.cache
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.AssemblyInfo.cs
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.csproj.CoreCompileInputs.cache
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.csproj.CopyComplete
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.dll
+D:\CaseStudy\AirLineManagement\Repositories\obj\Release\netcoreapp3.1\Repositories.pdb
