@@ -10,3 +10,4 @@ D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.c
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.dll
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.pdb
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.genruntimeconfig.cache
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Release\netcoreapp3.1\CoreModels.csproj.AssemblyReference.cache

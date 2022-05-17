@@ -48,7 +48,6 @@ namespace AdminService.Controllers
         [Route("LogOn")]
         public IActionResult LogOn(User user)
         {
-            
             if (!_loginService.LogOn(user))
             {
                 return Unauthorized();
@@ -59,7 +58,6 @@ namespace AdminService.Controllers
                 return Unauthorized();
             }
             return Ok(token);
-            
         }
     }
 }

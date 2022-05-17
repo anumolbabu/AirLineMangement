@@ -61,3 +61,7 @@ D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService
 D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.dll
 D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.pdb
 D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.genruntimeconfig.cache
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\CoreModels.dll
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\CoreModels.pdb
+D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.AssemblyReference.cache
+D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.CopyComplete
