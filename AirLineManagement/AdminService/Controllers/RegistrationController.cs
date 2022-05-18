@@ -29,6 +29,7 @@ namespace AdminService.Controllers
         public IActionResult Register(User user)
         {
             int status=_registrationService.Register(user);
+
             if(status==0)
             {
                 return Ok("Registration failed");

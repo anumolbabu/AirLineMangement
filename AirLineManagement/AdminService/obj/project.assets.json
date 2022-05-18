@@ -1549,6 +1549,19 @@
         "runtime": {
           "bin/placeholder/CoreModels.dll": {}
         }
+      },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CoreModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        }
       }
     }
   },
@@ -5837,6 +5850,11 @@
       "type": "project",
       "path": "../CoreModels/CoreModels.csproj",
       "msbuildProject": "../CoreModels/CoreModels.csproj"
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Repositories/Repositories.csproj",
+      "msbuildProject": "../Repositories/Repositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5845,7 +5863,8 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.24",
       "Microsoft.EntityFrameworkCore >= 5.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.16",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.16"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.16",
+      "Repositories >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5885,6 +5904,9 @@
           "projectReferences": {
             "D:\\CaseStudy\\AirLineManagement\\CoreModels\\CoreModels.csproj": {
               "projectPath": "D:\\CaseStudy\\AirLineManagement\\CoreModels\\CoreModels.csproj"
+            },
+            "D:\\CaseStudy\\AirLineManagement\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\CaseStudy\\AirLineManagement\\Repositories\\Repositories.csproj"
             }
           }
         }
