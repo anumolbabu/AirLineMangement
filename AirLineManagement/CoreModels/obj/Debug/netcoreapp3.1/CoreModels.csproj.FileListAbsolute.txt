@@ -3,7 +3,6 @@ D:\CaseStudy\AirLineManagement\CoreModels\bin\Debug\netcoreapp3.1\CoreModels.run
 D:\CaseStudy\AirLineManagement\CoreModels\bin\Debug\netcoreapp3.1\CoreModels.runtimeconfig.dev.json
 D:\CaseStudy\AirLineManagement\CoreModels\bin\Debug\netcoreapp3.1\CoreModels.dll
 D:\CaseStudy\AirLineManagement\CoreModels\bin\Debug\netcoreapp3.1\CoreModels.pdb
-D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.csproj.AssemblyReference.cache
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.GeneratedMSBuildEditorConfig.editorconfig
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.AssemblyInfoInputs.cache
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.AssemblyInfo.cs
@@ -11,3 +10,4 @@ D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.csp
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.dll
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.pdb
 D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.genruntimeconfig.cache
+D:\CaseStudy\AirLineManagement\CoreModels\obj\Debug\netcoreapp3.1\CoreModels.csproj.AssemblyReference.cache

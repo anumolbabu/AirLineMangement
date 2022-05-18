@@ -34,15 +34,67 @@ namespace AdminService.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("addairline")]
-        public IActionResult AddAirline(Airline airLine)
+        public async Task<IActionResult> AddAirlineAsync(Airline airLine)
         {
-           if(!_airlineService.AddAirline())
+           if(! await _airlineService.Create(airLine))
             {
                 return BadRequest("Failed to add Airline");
             }
             return Ok();
         }
 
+        /// <summary>
+        /// Edit Airline
+        /// </summary>
+        /// <param name="airLine">Details of airline</param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("editairline")]
+        public async Task<IActionResult> EditAirlineAsync(Airline airLine)
+        {
+            if (!await _airlineService.Edit(airLine))
+            {
+                return BadRequest("Failed to add Airline");
+            }
+            return Ok();
+        }
+
+        /// <summary>
+        /// Delete AirLine
+        /// </summary>
+        /// <param name="airLine"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("delete")]
+        public async Task<IActionResult> DeleteAirLine(int airlineid)
+        {
+            if (!await _airlineService.Delete(airlineid))
+            {
+                return BadRequest("Failed to add Airline");
+            }
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("getairlines")]
+        public async Task<IActionResult> GetAll()
+        {
+            List<Airline> airlines = new List<Airline>();
+            airlines= (List<Airline>)await _airlineService.GetAll();
+           
+            return Ok(airlines);
+        }
+
+
+        [HttpPost]
+        [Route("getairlinebyid")]
+        public async Task<IActionResult> GetAirline(int airlineid)
+        {
+            Airline airlines = new Airline();
+            airlines =  await _airlineService.GetById(airlineid);
+
+            return Ok(airlines);
+        }
 
     }
 }

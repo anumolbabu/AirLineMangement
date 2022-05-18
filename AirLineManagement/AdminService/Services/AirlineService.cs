@@ -15,9 +15,30 @@ namespace AdminService.Services
         {
             _airlineRepository = airlineRepository;
         }
-        public bool AddAirline(Airline airline)
+
+        public async Task<bool> Create(Airline airline)
         {
-            return _airlineRepository.Create(airline);
+            return await _airlineRepository.Create(airline);
+        }
+
+        public async Task<bool> Delete(int airlineId)
+        {
+            return await _airlineRepository.Delete(airlineId);
+        }
+
+        public async Task<bool> Edit(Airline airline)
+        {
+            return await _airlineRepository.Edit(airline);
+        }
+
+        public async Task<IEnumerable<Airline>> GetAll()
+        {
+            return await _airlineRepository.GetAll();
+        }
+
+        public async Task<Airline> GetById(int airlineId)
+        {
+            return await _airlineRepository.GetById(airlineId);
         }
     }
 }

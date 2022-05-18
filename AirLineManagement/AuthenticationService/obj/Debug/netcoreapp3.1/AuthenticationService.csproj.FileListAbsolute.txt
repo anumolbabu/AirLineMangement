@@ -1,0 +1,6 @@
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.csproj.AssemblyReference.cache
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.GeneratedMSBuildEditorConfig.editorconfig
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.AssemblyInfoInputs.cache
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.AssemblyInfo.cs
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.csproj.CoreCompileInputs.cache
+D:\CaseStudy\AirLineManagement\AuthenticationService\obj\Debug\netcoreapp3.1\AuthenticationService.MvcApplicationPartsAssemblyInfo.cache

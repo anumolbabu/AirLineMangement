@@ -34,6 +34,7 @@ namespace AdminService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddDbContext<AirLineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
@@ -70,8 +71,12 @@ namespace AdminService
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+            app.UseSwagger();
+            app.UseSwaggerUI();
+            app.UseHttpsRedirection();
 
+            app.UseRouting();
+            
             app.UseAuthentication();
             app.UseAuthorization();
 

@@ -64,3 +64,11 @@ D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService
 D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\CoreModels.dll
 D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\CoreModels.pdb
 D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.AssemblyReference.cache
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Repositories.dll
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Repositories.pdb
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\CaseStudy\AirLineManagement\AdminService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.MvcApplicationPartsAssemblyInfo.cs
+D:\CaseStudy\AirLineManagement\AdminService\obj\Debug\netcoreapp3.1\AdminService.csproj.CopyComplete
