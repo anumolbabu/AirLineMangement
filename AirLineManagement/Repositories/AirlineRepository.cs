@@ -33,6 +33,17 @@ namespace Repositories
             return true;
         }
 
+        public async Task<bool> Edit(Airline airline)
+        {
+            _airLineDBContext.Airlines.Update(airline);
+            int success = await _airLineDBContext.SaveChangesAsync();
+            if (success == 0)
+            {
+                return true;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Delete Airline
         /// </summary>
@@ -50,16 +61,7 @@ namespace Repositories
             return true;
         }
 
-        public async Task<bool> Edit(Airline airline)
-        {
-             _airLineDBContext.Airlines.Update(airline);
-            int success = await _airLineDBContext.SaveChangesAsync();
-            if (success == 0)
-            {
-                return true;
-            }
-            return true;
-        }
+       
 
         public async Task<Airline> GetById(int airlineId)
         {

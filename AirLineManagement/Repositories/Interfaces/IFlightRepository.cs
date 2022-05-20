@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Repositories.Interfaces
 {
@@ -15,33 +16,33 @@ namespace Repositories.Interfaces
         /// </summary>
         /// <param name="flight"></param>
         /// <returns>Status of creation</returns>
-        bool Create(Flight flight);
-
-        /// <summary>
-        /// Delete existing Flight
-        /// </summary>
-        /// <param name="FlightId"></param>
-        /// <returns></returns>
-        bool Delete(int FlightId);
+        Task<bool> Create(Flight flight);
 
         /// <summary>
         /// Update existing Flight
         /// </summary>
         /// <param name="FlightId"></param>
         /// <returns></returns>
-        bool Edit(int FlightId);
+        Task<bool> Edit(Flight flight);
+
+        /// <summary>
+        /// Delete existing Flight
+        /// </summary>
+        /// <param name="FlightId"></param>
+        /// <returns></returns>
+        Task<bool> Delete(int FlightId);
 
         /// <summary>
         /// Get single Flight by Id
         /// </summary>
         /// <param name="FlightId"></param>
         /// <returns></returns>
-        Airline GetById(int FlightId);
+        Task<Flight> GetById(int FlightId);
 
         /// <summary>
         /// Get All Flight
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Airline> GetAll();
+        Task<IEnumerable<Flight>> GetAll();
     }
 }

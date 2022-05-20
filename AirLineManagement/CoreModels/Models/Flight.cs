@@ -12,8 +12,9 @@ namespace CoreModels.Models
         public int AirlineId { get; set; }
         public string InstrumentUsed { get; set; }
         public int? BusinessClassSeatsCount { get; set; }
-        public int TotalSeatsCount { get; set; }
         public int? NumberOfRows { get; set; }
+        public int TotalSeatsCount { get; set; }
+        public int? IsMealOpted { get; set; }
         public int? IsDeleted { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? Createddate { get; set; }

@@ -9,8 +9,10 @@ namespace CoreModels.Models
     {
         public int PnrNumber { get; set; }
         public int? UserId { get; set; }
-        public int? FlightId { get; set; }
+        public int? ScheduleId { get; set; }
         public int? BookingStatus { get; set; }
+        public int? TotalPrice { get; set; }
+        public int? IsRoundTrip { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }

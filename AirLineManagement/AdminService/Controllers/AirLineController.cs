@@ -12,7 +12,7 @@ namespace AdminService.Controllers
     /// <summary>
     /// AirLine Controller
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/v1.0/[controller]")]
     [ApiController]
     public class AirLineController : ControllerBase
     {
@@ -54,7 +54,7 @@ namespace AdminService.Controllers
         {
             if (!await _airlineService.Edit(airLine))
             {
-                return BadRequest("Failed to add Airline");
+                return BadRequest("Failed to edit Airline");
             }
             return Ok();
         }

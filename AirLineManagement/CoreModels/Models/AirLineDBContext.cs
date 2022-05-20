@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -30,7 +31,7 @@ namespace CoreModels.Models
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=ctsdotnet96;Database=AirLineDB;User ID=sa;Password=pass@word1");
+                optionsBuilder.UseSqlServer();
             }
         }
 
@@ -45,6 +46,10 @@ namespace CoreModels.Models
                 entity.Property(e => e.AirlineId).HasColumnName("AirlineID");
 
                 entity.Property(e => e.AirlineName)
+                    .HasMaxLength(500)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.ContactAddress)
                     .HasMaxLength(500)
                     .IsFixedLength(true);
 
@@ -71,7 +76,7 @@ namespace CoreModels.Models
 
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.FlightId).HasColumnName("FlightID");
+                entity.Property(e => e.ScheduleId).HasColumnName("ScheduleID");
 
                 entity.Property(e => e.UpdatedBy)
                     .HasMaxLength(500)
@@ -84,11 +89,9 @@ namespace CoreModels.Models
 
             modelBuilder.Entity<Flight>(entity =>
             {
-                entity.HasKey(e => e.FlightNumber);
-
                 entity.ToTable("Flight");
 
-                entity.Property(e => e.FlightNumber).ValueGeneratedNever();
+                entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
                 entity.Property(e => e.AirlineId).HasColumnName("AirlineID");
 
@@ -97,10 +100,6 @@ namespace CoreModels.Models
                     .IsFixedLength(true);
 
                 entity.Property(e => e.Createddate).HasColumnType("datetime");
-
-                entity.Property(e => e.FlightId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("FlightID");
 
                 entity.Property(e => e.InstrumentUsed)
                     .HasMaxLength(500)

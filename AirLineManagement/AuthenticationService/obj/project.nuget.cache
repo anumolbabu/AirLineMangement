@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nlFmuxEeSjY1zyWFrhJiE6/YsooxzhNAMc8kPhrU+cgE6m3834C36qQA0gY6LrtRxpj3xNi1cE+LV+6onHynbA==",
+  "dgSpecHash": "3HB9CkXHPYqLmIneyNP8J4LZZbXqATtBLHA0qBLHGbC+5NmfLl4prL5RBsRZJQE9UtSvnKI98oSipMCV+YOx1g==",
   "success": true,
   "projectFilePath": "D:\\CaseStudy\\AirLineManagement\\AuthenticationService\\AuthenticationService.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,8 @@
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
+    "C:\\Users\\cogdotnet13\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
+    "C:\\Users\\cogdotnet13\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.1\\swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512",
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\cogdotnet13\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",

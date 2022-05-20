@@ -10,7 +10,7 @@ namespace AdminService.Services
 {
     public class AirlineService: IAirlineService
     {
-        IAirlineRepository _airlineRepository;
+        private readonly IAirlineRepository _airlineRepository;
         public AirlineService(IAirlineRepository airlineRepository)
         {
             _airlineRepository = airlineRepository;

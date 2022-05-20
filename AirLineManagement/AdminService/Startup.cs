@@ -36,10 +36,10 @@ namespace AdminService
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddDbContext<AirLineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddScoped<IRegistrationService, RegistrationService>();
             services.AddScoped<IAirlineService, AirlineService>();
             services.AddScoped<IAirlineRepository, AirlineRepository>();
+            services.AddScoped<IFlightServices, FlightService>();
+            services.AddScoped<IFlightRepository, FlightRepository>();
 
             services.AddAuthentication(x =>
             {
