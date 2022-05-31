@@ -22,7 +22,7 @@ namespace UserManagerService.Services
             _configuration = configuration;
         }
 
-        public Tokens Authenticate(LoginViewModel loggedinuser)
+        public Tokens Authenticate(LoginUserData loggedinuser)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]);

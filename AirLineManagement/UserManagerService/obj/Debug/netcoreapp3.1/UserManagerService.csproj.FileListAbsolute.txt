@@ -6,6 +6,7 @@ D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\UserMa
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\UserManagerService.runtimeconfig.dev.json
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\UserManagerService.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\UserManagerService.pdb
+D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\Consul.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -38,6 +39,7 @@ D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -51,7 +53,9 @@ D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtim
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\CommonShared.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\CoreModels.dll
+D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\CommonShared.pdb
 D:\CaseStudy\AirLineManagement\UserManagerService\bin\Debug\netcoreapp3.1\CoreModels.pdb
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.csproj.AssemblyReference.cache
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.GeneratedMSBuildEditorConfig.editorconfig

@@ -1,5 +1,6 @@
 using AdminService.Interfaces;
 using AdminService.Services;
+using CommonShared;
 using CoreModels.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -40,6 +41,7 @@ namespace AdminService
             services.AddScoped<IAirlineRepository, AirlineRepository>();
             services.AddScoped<IFlightServices, FlightService>();
             services.AddScoped<IFlightRepository, FlightRepository>();
+            services.AddConsulConfig(Configuration);
 
             services.AddAuthentication(x =>
             {
@@ -74,6 +76,7 @@ namespace AdminService
             app.UseSwagger();
             app.UseSwaggerUI();
             app.UseHttpsRedirection();
+            app.UseConsul(Configuration);
 
             app.UseRouting();
             

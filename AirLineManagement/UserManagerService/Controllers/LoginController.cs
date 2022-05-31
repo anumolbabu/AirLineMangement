@@ -11,7 +11,7 @@ using UserManagerService.ViewModels;
 namespace UserManagerService.Controllers
 {
     [Authorize]
-    [Route("api/v1.0/[controller]")]
+    [Route("api/v1.0/login")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -32,7 +32,7 @@ namespace UserManagerService.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("authenticate")]
-        public IActionResult Authenticate(LoginViewModel userdata)
+        public IActionResult Authenticate(LoginUserData userdata)
         {
             var token = _JWTManager.Authenticate(userdata);
             if (token == null)
@@ -44,19 +44,28 @@ namespace UserManagerService.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        [Route("LogOn")]
-        public IActionResult LogOn(LoginViewModel logedinuser)
+        [Route("logon")]
+        public IActionResult LogOn(LoginUserData loggedinuser)
         {
-            if (!_loginService.LogOn(logedinuser))
+            List<string> result = _loginService.LogOn(loggedinuser);
+            if(result.Count==0)
             {
-                return Unauthorized();
+                return Ok("EmailId or Password incorrect");
             }
-            var token = _JWTManager.Authenticate(logedinuser);
+            var token = _JWTManager.Authenticate(loggedinuser);
             if (token == null)
             {
                 return Unauthorized();
             }
-            return Ok(token);
+
+            Dictionary<string, string> response = new Dictionary<string, string>();
+
+            response.Add("UserId", result[0].ToString());
+            response.Add("UserName", result[1].ToString());
+            response.Add("Role", result[2].ToString());
+            response.Add("Token", token.Token);
+            response.Add("RefreshToken", token.RefreshToken);
+            return Ok(response);
         }
     }
 }

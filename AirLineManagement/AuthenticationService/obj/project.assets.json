@@ -366,15 +366,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
-        }
-      },
       "Microsoft.Win32.Registry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -465,45 +456,6 @@
         "runtime": {
           "lib/netstandard1.0/_._": {}
         }
-      },
-      "Swashbuckle.AspNetCore.Swagger/6.3.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "1.2.3"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Swashbuckle.AspNetCore.SwaggerGen/6.3.1": {
-        "type": "package",
-        "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "6.3.1"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
-        }
-      },
-      "Swashbuckle.AspNetCore.SwaggerUI/6.3.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       },
       "System.Collections/4.3.0": {
         "type": "package",
@@ -1546,29 +1498,6 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "AdminService/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CoreModels": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.24",
-          "Microsoft.EntityFrameworkCore": "5.0.16",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
-          "Repositories": "1.0.0",
-          "Swashbuckle.AspNetCore.Swagger": "6.3.1",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.3.1",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.3.1"
-        },
-        "compile": {
-          "bin/placeholder/AdminService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AdminService.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "CoreModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1581,19 +1510,6 @@
         },
         "runtime": {
           "bin/placeholder/CoreModels.dll": {}
-        }
-      },
-      "Repositories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CoreModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Repositories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repositories.dll": {}
         }
       }
     }
@@ -2200,23 +2116,6 @@
         "runtime.json"
       ]
     },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
-      "type": "package",
-      "path": "microsoft.openapi/1.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
-        "lib/netstandard2.0/Microsoft.OpenApi.dll",
-        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
-        "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
-        "microsoft.openapi.nuspec"
-      ]
-    },
     "Microsoft.Win32.Registry/4.7.0": {
       "sha512": "KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
       "type": "package",
@@ -2332,75 +2231,6 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.Swagger/6.3.1": {
-      "sha512": "idAFh4xhyJHYHfdLVOOn+BmscBul1OQbWsnL6YPJE8tO/0y6S79hDCvs6OY5VI093/9+1pYY3j31Zet9yaDZjA==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/6.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/net6.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/net6.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
-        "swashbuckle.aspnetcore.swagger.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.SwaggerGen/6.3.1": {
-      "sha512": "+uoBV4h/6NhCPLoTofSmuOnZ+usu4PW1jP6l4OHwPyu2frbYXGNpJsHs5uUXXn929OiVQkT8wo3Lj/o+P99Ejg==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/6.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
-        "swashbuckle.aspnetcore.swaggergen.nuspec"
-      ]
-    },
-    "Swashbuckle.AspNetCore.SwaggerUI/6.3.1": {
-      "sha512": "JLm9hN67jh7RHsX3H30+tb432Li8xm/qV5lRyMMkyHYMfWitIuKAAdrpo2ILcHOIeH7CLMuOO2hp/iLBmE+Bkw==",
-      "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggerui/6.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512",
-        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -5909,25 +5739,14 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "AdminService/1.0.0": {
-      "type": "project",
-      "path": "../AdminService/AdminService.csproj",
-      "msbuildProject": "../AdminService/AdminService.csproj"
-    },
     "CoreModels/1.0.0": {
       "type": "project",
       "path": "../CoreModels/CoreModels.csproj",
       "msbuildProject": "../CoreModels/CoreModels.csproj"
-    },
-    "Repositories/1.0.0": {
-      "type": "project",
-      "path": "../Repositories/Repositories.csproj",
-      "msbuildProject": "../Repositories/Repositories.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "AdminService >= 1.0.0",
       "CoreModels >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.24"
     ]
@@ -5967,9 +5786,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\CaseStudy\\AirLineManagement\\AdminService\\AdminService.csproj": {
-              "projectPath": "D:\\CaseStudy\\AirLineManagement\\AdminService\\AdminService.csproj"
-            },
             "D:\\CaseStudy\\AirLineManagement\\CoreModels\\CoreModels.csproj": {
               "projectPath": "D:\\CaseStudy\\AirLineManagement\\CoreModels\\CoreModels.csproj"
             }

@@ -12,7 +12,7 @@ namespace AdminService.Controllers
     /// <summary>
     /// AirLine Controller
     /// </summary>
-    [Route("api/v1.0/[controller]")]
+    [Route("api/v1.0/airline")]
     [ApiController]
     public class AirLineController : ControllerBase
     {

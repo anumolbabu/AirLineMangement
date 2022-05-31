@@ -1,0 +1,43 @@
+{
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  },
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/login/logon",
+      "DownstreamScheme": "http",
+      "ServiceName": "userManagerService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/login",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/registration/register",
+      "DownstreamScheme": "http",
+      "ServiceName": "userManagerService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/registration/register",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/airline/getairlines",
+      "DownstreamScheme": "http",
+      "ServiceName": "administrationService",
+      "UpstreamPathTemplate": "/api/airlinegateway/v1.0/airLine/getairlines",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/airLine/getairlinebyid",
+      "DownstreamScheme": "http",
+      "ServiceName": "administrationService",
+      "UpstreamPathTemplate": "/api/airlinegateway/v1.0/airLine/getairlinebyid",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ]
+}

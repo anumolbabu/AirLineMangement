@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdminService\AdminService.csproj" />
     <ProjectReference Include="..\CoreModels\CoreModels.csproj" />
   </ItemGroup>
 

@@ -9,6 +9,6 @@ namespace UserManagerService.Interfaces
 {
     public interface IRegistrationService
     {
-        User Register(LoginViewModel loggedinuser);
+        User Register(LoginUserData loggedinuser);
     }
 }

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminService", "AdminService\AdminService.csproj", "{35669A2B-A354-4D70-8D56-A14543382894}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreModels", "CoreModels\CoreModels.csproj", "{45D66317-9135-46A3-A387-5751E1F5C61D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{93691B79-9EB9-4E39-ADB1-27463A85D552}"
@@ -13,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService", "BookingService\BookingService.csproj", "{E16233C2-90D9-463B-B322-10FDCB628441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagerService", "UserManagerService\UserManagerService.csproj", "{B1D3EBF2-187A-474D-BFDC-5F86091A82B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagerService", "UserManagerService\UserManagerService.csproj", "{B1D3EBF2-187A-474D-BFDC-5F86091A82B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineAPIGateway", "AirlineAPIGateway\AirlineAPIGateway.csproj", "{C6E1F6A5-3554-4091-AEC4-FD2504F54622}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonShared", "CommonShared\CommonShared.csproj", "{CB77C3E1-54AC-439C-B5A3-D43C9DCAB479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministrationService", "AdministrationService\AdministrationService.csproj", "{7D344D11-2B6A-4683-A939-04D0128E1FDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{35669A2B-A354-4D70-8D56-A14543382894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35669A2B-A354-4D70-8D56-A14543382894}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35669A2B-A354-4D70-8D56-A14543382894}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35669A2B-A354-4D70-8D56-A14543382894}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45D66317-9135-46A3-A387-5751E1F5C61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45D66317-9135-46A3-A387-5751E1F5C61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45D66317-9135-46A3-A387-5751E1F5C61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +45,18 @@ Global
 		{B1D3EBF2-187A-474D-BFDC-5F86091A82B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D3EBF2-187A-474D-BFDC-5F86091A82B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D3EBF2-187A-474D-BFDC-5F86091A82B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E1F6A5-3554-4091-AEC4-FD2504F54622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E1F6A5-3554-4091-AEC4-FD2504F54622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E1F6A5-3554-4091-AEC4-FD2504F54622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E1F6A5-3554-4091-AEC4-FD2504F54622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB77C3E1-54AC-439C-B5A3-D43C9DCAB479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB77C3E1-54AC-439C-B5A3-D43C9DCAB479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB77C3E1-54AC-439C-B5A3-D43C9DCAB479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB77C3E1-54AC-439C-B5A3-D43C9DCAB479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

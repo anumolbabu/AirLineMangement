@@ -9,7 +9,7 @@ namespace UserManagerService.Interfaces
 {
     public interface ILoginService
     {
-        bool LogOn(LoginViewModel user);
+        List<string> LogOn(LoginUserData user);
         List<User> FindAll();
     }
 }

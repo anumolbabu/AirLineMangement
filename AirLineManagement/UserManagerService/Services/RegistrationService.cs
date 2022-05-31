@@ -18,15 +18,18 @@ namespace UserManagerService.Services
 
         }
 
-        public User Register(LoginViewModel loggedinuser)
+        public User Register(LoginUserData loggedinuser)
         {
             User user = new User();
             user.UserName = loggedinuser.UserName;
+            user.Email = loggedinuser.Email;
             user.Password = loggedinuser.Password;
-            user.Role = 2;
-            user.CreatedBy = "User";
-            user.CreatedDate = System.DateTime.UtcNow;
             user.IsDeleted = 0;
+            user.Role = 2;
+            user.CreatedBy = loggedinuser.UserName;
+            user.CreatedDate = System.DateTime.UtcNow;
+            user.UpdatedBy = loggedinuser.UserName;
+            user.UpdatedDate = System.DateTime.UtcNow;
            
             var UserExist= _airLineDBContext.Users.Any(x => x.UserName == user.UserName);
               

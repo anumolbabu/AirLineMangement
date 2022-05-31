@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommonShared\CommonShared.csproj" />
     <ProjectReference Include="..\CoreModels\CoreModels.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>

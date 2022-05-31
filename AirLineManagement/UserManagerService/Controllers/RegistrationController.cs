@@ -12,7 +12,7 @@ using UserManagerService.ViewModels;
 namespace UserManagerService.Controllers
 {
     [Authorize]
-    [Route("api/v1.0/[controller]")]
+    [Route("api/v1.0/registration")]
     [ApiController]
     public class RegistrationController : ControllerBase
     {
@@ -27,28 +27,48 @@ namespace UserManagerService.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
-        public IActionResult Register(LoginViewModel logedinuser)
+        public IActionResult Register(LoginUserData logedinuser)
         {
             try
             {
                 User registereduser = _registrationService.Register(logedinuser);
+                
+                if (registereduser.UserId==0)
+                {
+                    return Ok("Registeration Failed");
+                }
                 var token = _JWTManager.Authenticate(logedinuser);
                 if (token == null)
                 {
                     return Unauthorized();
                 }
-                RegisterResponse response = new RegisterResponse
-                {
-                    User = registereduser,
-                    Tokens = token
-                };
-               
+
+                Dictionary<string, string> response = new Dictionary<string, string>();
+
+                response.Add("UserId", registereduser.UserId.ToString());
+                response.Add("UserName", registereduser.UserName.ToString());
+                response.Add("Role",registereduser.Role.ToString());
+                response.Add("Token", token.Token);
+                response.Add("RefreshToken", token.RefreshToken);
+
                 return Ok(response);
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new
+                {
+                    Response = "Error",
+                    ResponseMessage = ex.Message
+                });
             }
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("findall")]
+        public IActionResult FindAll()
+        {
+            return Ok("All Users");
         }
     }
 }

@@ -73,9 +73,9 @@ namespace Repositories
             //price
             //List<dynamic> result =
             var scheduledata = _airLineDBContext.Schedules.Where(x => x.FromPlace == schedule.FromPlace &&
-                                                                         x.ToPlace == schedule.ToPlace &&
-                                                                         x.StartDateTime == schedule.StartDateTime &&
-                                                                         x.EndDateTime == schedule.EndDateTime).ToList();
+                                                                        x.ToPlace == schedule.ToPlace &&
+                                                                        x.StartDateTime == schedule.StartDateTime &&
+                                                                        x.EndDateTime == schedule.EndDateTime).ToList();
                                                                
             //var flightdata=_airLineDBContext.Schedules.Join(
             //                                                _airLineDBContext.Flights, 

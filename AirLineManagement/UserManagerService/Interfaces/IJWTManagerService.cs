@@ -9,6 +9,6 @@ namespace UserManagerService.Interfaces
 {
     public interface IJWTManagerService
     {
-        Tokens Authenticate(LoginViewModel loggedinuser);
+        Tokens Authenticate(LoginUserData loggedinuser);
     }
 }

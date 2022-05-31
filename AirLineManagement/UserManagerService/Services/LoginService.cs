@@ -16,16 +16,18 @@ namespace UserManagerService.Services
         {
             _airLineDBContext = airLineDBContext;
         }
-        public bool LogOn(LoginViewModel loggedinuser)
+        public List<string> LogOn(LoginUserData loggedinuser)
         {
-            if (_airLineDBContext.Users.Any(x => x.UserName == loggedinuser.UserName && x.Password == loggedinuser.Password))
+            IEnumerable<User> result = _airLineDBContext.Users.Where(m => m.UserName == loggedinuser.UserName && m.Password == loggedinuser.Password && m.IsDeleted==0);
+            List<string> userdata = new List<string>();
+            if (result.ToList().Count != 0)
             {
-                return true;
+                userdata.Add(result.FirstOrDefault().UserId.ToString());
+                userdata.Add(result.FirstOrDefault().UserName.ToString());
+                userdata.Add(result.FirstOrDefault().Role.ToString());
+
             }
-            else
-            {
-                return false;
-            }
+            return userdata;
         }
 
         List<User> ILoginService.FindAll()

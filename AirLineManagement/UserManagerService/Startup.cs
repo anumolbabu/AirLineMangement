@@ -1,3 +1,4 @@
+using CommonShared;
 using CoreModels.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +38,7 @@ namespace UserManagerService
 
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IRegistrationService, RegistrationService>();
+            services.AddConsulConfig(Configuration);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -66,9 +68,13 @@ namespace UserManagerService
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseConsul(Configuration);
+
             app.UseSwagger();
 
             app.UseSwaggerUI();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseRouting();
 
