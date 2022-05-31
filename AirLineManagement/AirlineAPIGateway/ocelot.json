@@ -28,15 +28,47 @@
       "DownstreamPathTemplate": "/api/v1.0/airline/getairlines",
       "DownstreamScheme": "http",
       "ServiceName": "administrationService",
-      "UpstreamPathTemplate": "/api/airlinegateway/v1.0/airLine/getairlines",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/airLine/getairlines",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
       "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/v1.0/airLine/getairlinebyid",
+      "DownstreamPathTemplate": "/api/v1.0/airline/getairlinebyid",
       "DownstreamScheme": "http",
       "ServiceName": "administrationService",
-      "UpstreamPathTemplate": "/api/airlinegateway/v1.0/airLine/getairlinebyid",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/airline/getairlinebyid",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/airline/addairline",
+      "DownstreamScheme": "http",
+      "ServiceName": "administrationService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/airline/addairline",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/airline/delete/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "administrationService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/airline/delete/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/airline/editairline",
+      "DownstreamScheme": "http",
+      "ServiceName": "administrationService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/airline/editairline",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/search/searchflights",
+      "DownstreamScheme": "http",
+      "ServiceName": "flightBookingService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/search/searchflights",
       "UpstreamHttpMethod": [ "Post" ]
     }
   ]

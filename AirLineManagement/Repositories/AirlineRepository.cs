@@ -22,10 +22,10 @@ namespace Repositories
         /// </summary>
         /// <param name="airline">airline</param>
         /// <returns></returns>
-        public async Task<bool> Create(Airline airline)
+        public bool Create(Airline airline)
         {
             _airLineDBContext.Airlines.Add(airline);
-            int success=await _airLineDBContext.SaveChangesAsync();
+            int success= _airLineDBContext.SaveChanges();
             if(success==0)
             {
                 return true;
@@ -33,10 +33,10 @@ namespace Repositories
             return true;
         }
 
-        public async Task<bool> Edit(Airline airline)
+        public bool Edit(Airline airline)
         {
             _airLineDBContext.Airlines.Update(airline);
-            int success = await _airLineDBContext.SaveChangesAsync();
+            int success =  _airLineDBContext.SaveChanges();
             if (success == 0)
             {
                 return true;
@@ -49,11 +49,11 @@ namespace Repositories
         /// </summary>
         /// <param name="airline"></param>
         /// <returns></returns>
-        public async Task<bool> Delete(int airlineId)
+        public bool Delete(int airlineId)
         {
-            var airline = await _airLineDBContext.Airlines.Where(x => x.AirlineId == airlineId).FirstOrDefaultAsync();
+            var airline =  _airLineDBContext.Airlines.Where(x => x.AirlineId == airlineId).FirstOrDefault();
             _airLineDBContext.Airlines.Remove(airline);
-            int success = await _airLineDBContext.SaveChangesAsync();
+            int success =  _airLineDBContext.SaveChanges();
             if (success == 0)
             {
                 return true;
@@ -63,14 +63,14 @@ namespace Repositories
 
        
 
-        public async Task<Airline> GetById(int airlineId)
+        public Airline GetById(int airlineId)
         {
-            return await _airLineDBContext.Airlines.FindAsync(airlineId);
+            return _airLineDBContext.Airlines.Find(airlineId);
         }
 
-        public async Task<IEnumerable<Airline>> GetAll()
+        public IEnumerable<Airline> GetAll()
         {
-            return await _airLineDBContext.Airlines.ToListAsync();
+            return _airLineDBContext.Airlines.ToList();
         }
     }
 }

@@ -13,33 +13,33 @@ namespace AdministrationService.Interfaces
         /// </summary>
         /// <param name="airline"></param>
         /// <returns></returns>
-        Task<bool> Create(Airline airline);
+        bool Create(Airline airline);
 
         /// <summary>
         /// Delete existing Airline
         /// </summary>
         /// <param name="airlineId"></param>
         /// <returns></returns>
-        Task<bool> Delete(int airlineId);
+        bool Delete(int airlineId);
 
         /// <summary>
         /// Update existing Airline
         /// </summary>
         /// <param name="airlineId"></param>
         /// <returns></returns>
-        Task<bool> Edit(Airline airline);
+        bool Edit(Airline airline);
 
         /// <summary>
         /// Get single Airline by Id
         /// </summary>
         /// <param name="airlineId"></param>
         /// <returns></returns>
-        Task<Airline> GetById(int airlineId);
+        Airline GetById(int airlineId);
 
         /// <summary>
         /// Get All Airlines
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<Airline>> GetAll();
+        IEnumerable<Airline> GetAll();
     }
 }

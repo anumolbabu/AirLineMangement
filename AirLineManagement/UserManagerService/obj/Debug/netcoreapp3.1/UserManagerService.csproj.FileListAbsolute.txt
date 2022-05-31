@@ -68,6 +68,7 @@ D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\static
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\staticwebassets\UserManagerService.StaticWebAssets.xml
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\scopedcss\bundle\UserManagerService.styles.css
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.RazorTargetAssemblyInfo.cache
+D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.csproj.CopyComplete
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.dll
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.pdb
 D:\CaseStudy\AirLineManagement\UserManagerService\obj\Debug\netcoreapp3.1\UserManagerService.genruntimeconfig.cache

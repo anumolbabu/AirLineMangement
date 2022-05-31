@@ -34,13 +34,13 @@ namespace AdministrationService.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("addairline")]
-        public async Task<IActionResult> AddAirlineAsync(Airline airLine)
+        public IActionResult AddAirline(Airline airLine)
         {
-            if (!await _airlineService.Create(airLine))
+            if (! _airlineService.Create(airLine))
             {
                 return BadRequest("Failed to add Airline");
             }
-            return Ok();
+            return Ok(airLine);
         }
 
         /// <summary>
@@ -50,25 +50,25 @@ namespace AdministrationService.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("editairline")]
-        public async Task<IActionResult> EditAirlineAsync(Airline airLine)
+        public IActionResult EditAirlineAsync(Airline airLine)
         {
-            if (!await _airlineService.Edit(airLine))
+            if (! _airlineService.Edit(airLine))
             {
                 return BadRequest("Failed to edit Airline");
             }
-            return Ok();
+            return Ok(airLine);
         }
 
         /// <summary>
         /// Delete AirLine
         /// </summary>
-        /// <param name="airLine"></param>
+        /// <param name="airlineid"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("delete")]
-        public async Task<IActionResult> DeleteAirLine(int airlineid)
+        [Route("delete/{id}")]
+        public IActionResult DeleteAirLine(int id)
         {
-            if (!await _airlineService.Delete(airlineid))
+            if (! _airlineService.Delete(id))
             {
                 return BadRequest("Failed to add Airline");
             }
@@ -77,10 +77,10 @@ namespace AdministrationService.Controllers
 
         [HttpGet]
         [Route("getairlines")]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
             List<Airline> airlines = new List<Airline>();
-            airlines = (List<Airline>)await _airlineService.GetAll();
+            airlines = (List<Airline>) _airlineService.GetAll();
 
             return Ok(airlines);
         }
@@ -88,10 +88,10 @@ namespace AdministrationService.Controllers
 
         [HttpPost]
         [Route("getairlinebyid")]
-        public async Task<IActionResult> GetAirline(int airlineid)
+        public IActionResult GetAirline(int airlineid)
         {
             Airline airlines = new Airline();
-            airlines = await _airlineService.GetById(airlineid);
+            airlines =  _airlineService.GetById(airlineid);
 
             return Ok(airlines);
         }
