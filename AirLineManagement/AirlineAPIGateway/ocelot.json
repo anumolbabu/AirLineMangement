@@ -67,8 +67,16 @@
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/v1.0/search/searchflights",
       "DownstreamScheme": "http",
-      "ServiceName": "flightBookingService",
+      "ServiceName": "BookingService",
       "UpstreamPathTemplate": "/api/v1.0/airlinegateway/search/searchflights",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/v1.0/search/bookflight",
+      "DownstreamScheme": "http",
+      "ServiceName": "BookingService",
+      "UpstreamPathTemplate": "/api/v1.0/airlinegateway/search/bookflight",
       "UpstreamHttpMethod": [ "Post" ]
     }
   ]

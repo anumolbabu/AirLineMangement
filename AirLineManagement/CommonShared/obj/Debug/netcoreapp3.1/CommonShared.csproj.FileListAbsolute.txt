@@ -1,7 +1,6 @@
 D:\CaseStudy\AirLineManagement\CommonShared\bin\Debug\netcoreapp3.1\CommonShared.deps.json
 D:\CaseStudy\AirLineManagement\CommonShared\bin\Debug\netcoreapp3.1\CommonShared.dll
 D:\CaseStudy\AirLineManagement\CommonShared\bin\Debug\netcoreapp3.1\CommonShared.pdb
-D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.csproj.AssemblyReference.cache
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.GeneratedMSBuildEditorConfig.editorconfig
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.AssemblyInfoInputs.cache
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.AssemblyInfo.cs

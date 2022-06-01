@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonShared", "CommonShare
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdministrationService", "AdministrationService\AdministrationService.csproj", "{7D344D11-2B6A-4683-A939-04D0128E1FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightBookingService", "FlightBooking Service\FlightBookingService.csproj", "{32FF708B-99CB-4C2F-A965-9655A4D84613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService", "BookingService\BookingService.csproj", "{D802DEE6-5227-4FF8-BAFE-936578C937FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D344D11-2B6A-4683-A939-04D0128E1FDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32FF708B-99CB-4C2F-A965-9655A4D84613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32FF708B-99CB-4C2F-A965-9655A4D84613}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32FF708B-99CB-4C2F-A965-9655A4D84613}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32FF708B-99CB-4C2F-A965-9655A4D84613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D802DEE6-5227-4FF8-BAFE-936578C937FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D802DEE6-5227-4FF8-BAFE-936578C937FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D802DEE6-5227-4FF8-BAFE-936578C937FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D802DEE6-5227-4FF8-BAFE-936578C937FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
