@@ -13,7 +13,7 @@ namespace Repositories.Interfaces
         /// </summary>
         /// <param name="airline"></param>
         /// <returns></returns>
-        bool Create(Airline airline);
+        Airline Create(Airline airline);
 
         /// <summary>
         /// Delete existing Airline
@@ -27,7 +27,7 @@ namespace Repositories.Interfaces
         /// </summary>
         /// <param name="airlineId"></param>
         /// <returns></returns>
-        bool Edit(Airline airline);
+        Airline Edit(Airline airline);
 
         /// <summary>
         /// Get single Airline by Id

@@ -33,9 +33,11 @@ namespace AdministrationService
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddDbContext<AirLineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
+            services.AddDbContext<AirlineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
             services.AddScoped<IAirlineService, AirlineService>();
             services.AddScoped<IAirlineRepository, AirlineRepository>();
+            services.AddScoped<IInventoryService, InventoryService>();
+            services.AddScoped<IFlightRepository, FlightRepository>();
             services.AddConsulConfig(Configuration);
         }
 

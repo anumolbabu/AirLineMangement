@@ -8,11 +8,15 @@ namespace BookingService.ViewModels
 {
     public class BookingRequestModel
     {
-        public int ScheduleId { get; set; }
+        public int FlightId { get; set; }
 
         public int UserId { get; set; }
 
-        public int Ticketprice { get; set; }
+        public string UserName { get; set; }
+
+        public int IsOneway { get; set; }
+
+        public int? BookingStatus { get; set; }
 
         public int TotalSeat { get; set; }
 

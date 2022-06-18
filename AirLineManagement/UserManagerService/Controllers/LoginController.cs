@@ -22,25 +22,7 @@ namespace UserManagerService.Controllers
             _loginService = loginService;
             _JWTManager = jWTManager;
         }
-        [HttpGet]
-        [Route("GetAllUsers")]
-        public IActionResult GetAllUsers()
-        {
-            return Ok(_loginService.FindAll());
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
-        [Route("authenticate")]
-        public IActionResult Authenticate(LoginUserData userdata)
-        {
-            var token = _JWTManager.Authenticate(userdata);
-            if (token == null)
-            {
-                return Unauthorized();
-            }
-            return Ok(token);
-        }
+       
 
         [AllowAnonymous]
         [HttpPost]
@@ -52,7 +34,7 @@ namespace UserManagerService.Controllers
             {
                 return Ok("EmailId or Password incorrect");
             }
-            var token = _JWTManager.Authenticate(loggedinuser);
+            var token = _JWTManager.Authenticate(loggedinuser.Email);
             if (token == null)
             {
                 return Unauthorized();
@@ -61,8 +43,14 @@ namespace UserManagerService.Controllers
             Dictionary<string, string> response = new Dictionary<string, string>();
 
             response.Add("UserId", result[0].ToString());
-            response.Add("UserName", result[1].ToString());
-            response.Add("Role", result[2].ToString());
+            response.Add("Email", result[1].ToString());
+            response.Add("Name", result[2].ToString());
+            response.Add("Role", result[3].ToString());
+
+            //response.Add("Gender", result[4].ToString());
+            //response.Add("Age", result[5].ToString());
+            //response.Add("ContactNumber", result[6].ToString());
+
             response.Add("Token", token.Token);
             response.Add("RefreshToken", token.RefreshToken);
             return Ok(response);

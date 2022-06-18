@@ -8,6 +8,5 @@ D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories
 D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfoInputs.cache
 D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.AssemblyInfo.cs
 D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.CoreCompileInputs.cache
-D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.csproj.CopyComplete
 D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.dll
 D:\CaseStudy\AirLineManagement\Repositories\obj\Debug\netcoreapp3.1\Repositories.pdb

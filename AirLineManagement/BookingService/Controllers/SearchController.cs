@@ -13,40 +13,38 @@ namespace BookingService.Controllers
     [ApiController]
     public class SearchController : ControllerBase
     {
-        private readonly AirLineDBContext _airLineDBContext;
-        public SearchController(AirLineDBContext airLineDBContext)
+        private readonly AirlineDBContext _airlineDBContext;
+        public SearchController(AirlineDBContext airlineDBContext)
         {
-            _airLineDBContext = airLineDBContext;
+            _airlineDBContext = airlineDBContext;
         }
 
         [HttpPost]
-        [Route("searchflights")]
+        [Route("getflights")]
         public IActionResult Search(SearchRequestModel searchRequest)
         {
-            IEnumerable<Schedule> flightSchedule = _airLineDBContext.Schedules
+            IEnumerable<Flight> flightSchedules = _airlineDBContext.Flights
                                                                     .Where(x => x.FromPlace == searchRequest.FromPlace &&
                                                                                 x.ToPlace == searchRequest.ToPlace &&
                                                                                 x.StartDateTime.Date>=searchRequest.StartDateTime.Date &&
                                                                                 x.StartDateTime.Date<=searchRequest.EndDateTime.Date
                                                                                 ).ToList();
-                                                                               
-            IEnumerable<Flight> flightdetails = _airLineDBContext.Flights.ToList();
-            IEnumerable<Airline> airlinedetails = _airLineDBContext.Airlines.ToList();
+              
+            IEnumerable<Airline> airlines = _airlineDBContext.Airlines.ToList();
 
-            var responsedata = (from schedule in flightSchedule
-                                join flight in flightdetails on schedule.FlightId equals flight.FlightId
-                                join airline in airlinedetails on flight.AirlineId equals airline.AirlineId
+            var responsedata = (from flight in flightSchedules
+                                join airline in airlines on flight.AirlineId equals airline.AirlineId
                                 where airline.IsBlocked == 0
                                 select new
                                 {
                                     airline.AirlineName,
+                                    flight.FlightId,
                                     flight.FlightNumber,
-                                    schedule.ScheduleId,
-                                    schedule.FromPlace,
-                                    schedule.ToPlace,
-                                    schedule.StartDateTime,
-                                    schedule.EndDateTime,
-                                    schedule.TicketCost
+                                    flight.FromPlace,
+                                    flight.ToPlace,
+                                    flight.StartDateTime,
+                                    flight.EndDateTime,
+                                    flight.TicketCost
                                 }).ToList();
            
             return Ok(responsedata);
@@ -57,42 +55,77 @@ namespace BookingService.Controllers
         [Route("bookflight")]
         public IActionResult BookFlight(BookingRequestModel bookingRequest)
         {
-            BookingDetail bookingData = new BookingDetail();
-            bookingData.ScheduleId = bookingRequest.ScheduleId;
-            bookingData.UserId = bookingRequest.UserId;
-            bookingData.IsRoundTrip = 0;
-            bookingData.BookingStatus = 1;
-            bookingData.TotalPrice = bookingRequest.Ticketprice * bookingRequest.TotalSeat;
-            bookingData.CreatedBy = "User";
-            bookingData.CreatedDate = System.DateTime.UtcNow;
-            _airLineDBContext.BookingDetails.Add(bookingData);
+            Booking bookingrequestData = new Booking();
+            bookingrequestData.FlightId = bookingRequest.FlightId;
+            bookingrequestData.UserId = bookingRequest.UserId;
+            bookingrequestData.IsOneway = bookingRequest.IsOneway;
+            bookingrequestData.BookingStatus = 1;
+            bookingrequestData.CreatedBy = bookingRequest.UserName;
+            bookingrequestData.CreatedDate = System.DateTime.UtcNow;
+            bookingrequestData.UpdatedBy = bookingRequest.UserName;
+            bookingrequestData.UpdatedDate = System.DateTime.UtcNow;
+            _airlineDBContext.Bookings.Add(bookingrequestData);
 
-            _airLineDBContext.SaveChanges();
+            _airlineDBContext.SaveChanges();
 
-            BookingDetail currentBookingData = _airLineDBContext.BookingDetails
-                                                                .Where(x => x.ScheduleId == bookingData.ScheduleId &&
-                                                                            x.UserId == bookingData.UserId &&
+            Booking currentBookingData = _airlineDBContext.Bookings
+                                                                .Where(x => x.FlightId == bookingrequestData.FlightId &&
+                                                                            x.UserId == bookingrequestData.UserId &&
                                                                             x.BookingStatus == 1 &&
-                                                                            x.CreatedDate == bookingData.CreatedDate).FirstOrDefault();
+                                                                            x.CreatedDate == bookingrequestData.CreatedDate).FirstOrDefault();
                                                                 
             
 
             Passenger passenger = new Passenger();
             foreach(var passengerdata in bookingRequest.Passengers)
             {
+
+                passenger.Pnr = currentBookingData.Pnr;
+
                 passenger.PassengerName = passengerdata.PassengerName;
                 passenger.Age = passengerdata.Age;
                 passenger.Gender = passengerdata.Gender;
-                passenger.PnrNumber = currentBookingData.PnrNumber;
+                passenger.SeatNumber = passengerdata.SeatNumber;
+                passenger.SeatType = passengerdata.SeatType;
+                passenger.MealType = passengerdata.MealType;
+                passenger.TicketCost = passengerdata.TicketCost;
 
-                _airLineDBContext.Passengers.Add(passenger);
-                _airLineDBContext.SaveChanges();
+                passenger.CreatedBy = bookingRequest.UserName;
+                passenger.CreatedDate = System.DateTime.UtcNow;
+                passenger.UpdatedBy = bookingRequest.UserName;
+                passenger.UpdatedDate = System.DateTime.UtcNow;
+
+                _airlineDBContext.Passengers.Add(passenger);
+                _airlineDBContext.SaveChanges();
             }
-            
-            //IEnumerable<Flight> flightdetails = _airLineDBContext.Flights.ToList();
-            //IEnumerable<Airline> airlinedetails = _airLineDBContext.Airlines.ToList();
 
-            return Ok(currentBookingData);
+            IEnumerable<Airline> airlineData = _airlineDBContext.Airlines.ToList();
+
+            IEnumerable<Flight> flightData = _airlineDBContext.Flights.ToList();
+
+            IEnumerable<Booking> bookingData = _airlineDBContext.Bookings.Where(x => x.Pnr == currentBookingData.Pnr).ToList();
+
+
+
+            var responsedata = (from booking in bookingData
+                                join flight in flightData on booking.FlightId equals flight.FlightId
+                                join airline in airlineData on flight.AirlineId equals airline.AirlineId
+                                where airline.IsBlocked == 0 &&
+                                      booking.Pnr==currentBookingData.Pnr
+                                select new
+                                {
+                                    airline.AirlineName,
+                                    flight.FlightId,
+                                    flight.FlightNumber,
+                                    flight.FromPlace,
+                                    flight.ToPlace,
+                                    flight.StartDateTime,
+                                    flight.EndDateTime,
+                                    passengerCount = bookingrequestData.TotalSeat,
+                                    totalCost =flight.TicketCost* bookingrequestData.TotalSeat
+                                }).ToList();
+
+            return Ok(responsedata);
         }
     }
 }

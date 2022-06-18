@@ -5,12 +5,14 @@ using System.Collections.Generic;
 
 namespace CoreModels.Models
 {
-    public partial class MealInfo
+    public partial class Booking
     {
-        public int? MealId { get; set; }
-        public int? FlightId { get; set; }
-        public string MealType { get; set; }
-        public string MealName { get; set; }
+        public int Pnr { get; set; }
+        public int FlightId { get; set; }
+        public int UserId { get; set; }
+        public int? IsOneway { get; set; }
+        public int? BookingStatus { get; set; }
+        public int? TotalSeat { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string UpdatedBy { get; set; }

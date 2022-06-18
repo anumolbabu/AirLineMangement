@@ -22,7 +22,7 @@ namespace UserManagerService.Services
             _configuration = configuration;
         }
 
-        public Tokens Authenticate(LoginUserData loggedinuser)
+        public Tokens Authenticate(string email)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenKey = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]);
@@ -31,7 +31,7 @@ namespace UserManagerService.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name,loggedinuser.UserName)
+                    new Claim(ClaimTypes.Name,email)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)

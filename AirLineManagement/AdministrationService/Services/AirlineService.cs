@@ -16,19 +16,19 @@ namespace AdministrationService.Services
             _airlineRepository = airlineRepository;
         }
 
-        public bool Create(Airline airline)
+        public Airline Create(Airline airline)
         {
             return _airlineRepository.Create(airline);
+        }
+
+        public Airline Edit(Airline airline)
+        {
+            return _airlineRepository.Edit(airline);
         }
 
         public bool Delete(int airlineId)
         {
             return _airlineRepository.Delete(airlineId);
-        }
-
-        public bool Edit(Airline airline)
-        {
-            return _airlineRepository.Edit(airline);
         }
 
         public IEnumerable<Airline> GetAll()

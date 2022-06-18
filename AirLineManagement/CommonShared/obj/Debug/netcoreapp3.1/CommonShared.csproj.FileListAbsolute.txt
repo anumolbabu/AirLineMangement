@@ -7,3 +7,4 @@ D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.csproj.CoreCompileInputs.cache
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.dll
 D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.pdb
+D:\CaseStudy\AirLineManagement\CommonShared\obj\Debug\netcoreapp3.1\CommonShared.csproj.AssemblyReference.cache

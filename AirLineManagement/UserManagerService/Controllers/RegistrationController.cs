@@ -11,7 +11,6 @@ using UserManagerService.ViewModels;
 
 namespace UserManagerService.Controllers
 {
-    [Authorize]
     [Route("api/v1.0/registration")]
     [ApiController]
     public class RegistrationController : ControllerBase
@@ -27,17 +26,17 @@ namespace UserManagerService.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
-        public IActionResult Register(LoginUserData logedinuser)
+        public IActionResult Register(RegisterUserData registerUser)
         {
             try
             {
-                User registereduser = _registrationService.Register(logedinuser);
+                User registereduser = _registrationService.Register(registerUser);
                 
                 if (registereduser.UserId==0)
                 {
                     return Ok("Registeration Failed");
                 }
-                var token = _JWTManager.Authenticate(logedinuser);
+                var token = _JWTManager.Authenticate(registerUser.Email);
                 if (token == null)
                 {
                     return Unauthorized();
@@ -46,7 +45,8 @@ namespace UserManagerService.Controllers
                 Dictionary<string, string> response = new Dictionary<string, string>();
 
                 response.Add("UserId", registereduser.UserId.ToString());
-                response.Add("UserName", registereduser.UserName.ToString());
+                response.Add("Email", registereduser.Email.ToString());
+                response.Add("Name", registereduser.Name.ToString());
                 response.Add("Role",registereduser.Role.ToString());
                 response.Add("Token", token.Token);
                 response.Add("RefreshToken", token.RefreshToken);
@@ -63,12 +63,5 @@ namespace UserManagerService.Controllers
             }
         }
 
-        [AllowAnonymous]
-        [HttpGet]
-        [Route("findall")]
-        public IActionResult FindAll()
-        {
-            return Ok("All Users");
-        }
     }
 }

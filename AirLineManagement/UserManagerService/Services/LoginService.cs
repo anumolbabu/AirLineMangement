@@ -10,21 +10,27 @@ namespace UserManagerService.Services
 {
     public class LoginService: ILoginService
     {
-        private readonly AirLineDBContext _airLineDBContext;
+        private readonly AirlineDBContext _airLineDBContext;
 
-        public LoginService(AirLineDBContext airLineDBContext)
+        public LoginService(AirlineDBContext airLineDBContext)
         {
             _airLineDBContext = airLineDBContext;
         }
         public List<string> LogOn(LoginUserData loggedinuser)
         {
-            IEnumerable<User> result = _airLineDBContext.Users.Where(m => m.UserName == loggedinuser.UserName && m.Password == loggedinuser.Password && m.IsDeleted==0);
+            IEnumerable<User> result = _airLineDBContext.Users.Where(m => m.Email == loggedinuser.Email && m.Password == loggedinuser.Password && m.IsActive==1);
             List<string> userdata = new List<string>();
             if (result.ToList().Count != 0)
             {
                 userdata.Add(result.FirstOrDefault().UserId.ToString());
-                userdata.Add(result.FirstOrDefault().UserName.ToString());
+                userdata.Add(result.FirstOrDefault().Email.ToString());
+                userdata.Add(result.FirstOrDefault().Name.ToString());
                 userdata.Add(result.FirstOrDefault().Role.ToString());
+
+
+                //userdata.Add(result.FirstOrDefault().Gender.ToString());
+                //userdata.Add(result.FirstOrDefault().Age.ToString());
+                //userdata.Add(result.FirstOrDefault().ContactNumber.ToString());
 
             }
             return userdata;

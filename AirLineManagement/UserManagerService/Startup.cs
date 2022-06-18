@@ -34,7 +34,7 @@ namespace UserManagerService
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddDbContext<AirLineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
+            services.AddDbContext<AirlineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
 
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IRegistrationService, RegistrationService>();

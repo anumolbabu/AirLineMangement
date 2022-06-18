@@ -1,29 +1,26 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
 namespace CoreModels.Models
 {
-    public partial class AirLineDBContext : DbContext
+    public partial class AirlineDBContext : DbContext
     {
-        public AirLineDBContext()
+        public AirlineDBContext()
         {
         }
 
-        public AirLineDBContext(DbContextOptions<AirLineDBContext> options)
+        public AirlineDBContext(DbContextOptions<AirlineDBContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Airline> Airlines { get; set; }
-        public virtual DbSet<BookingDetail> BookingDetails { get; set; }
+        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Flight> Flights { get; set; }
-        public virtual DbSet<MealInfo> MealInfos { get; set; }
         public virtual DbSet<Passenger> Passengers { get; set; }
-        public virtual DbSet<Schedule> Schedules { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -46,101 +43,114 @@ namespace CoreModels.Models
                 entity.Property(e => e.AirlineId).HasColumnName("AirlineID");
 
                 entity.Property(e => e.AirlineName)
-                    .HasMaxLength(500)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.ContactAddress)
-                    .HasMaxLength(500)
+                entity.Property(e => e.ContactNumber)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
                 entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CreatedDate).HasColumnType("date");
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Logo)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UpdatedDate).HasColumnType("date");
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
-            modelBuilder.Entity<BookingDetail>(entity =>
+            modelBuilder.Entity<Booking>(entity =>
             {
-                entity.HasKey(e => e.PnrNumber);
+                entity.HasKey(e => e.Pnr);
+
+                entity.ToTable("Booking");
+
+                entity.Property(e => e.Pnr).HasColumnName("PNR");
 
                 entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
-                entity.Property(e => e.ScheduleId).HasColumnName("ScheduleID");
+                entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
                 entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
             });
 
             modelBuilder.Entity<Flight>(entity =>
             {
-                entity.ToTable("Flight");
+                entity.ToTable("flight");
 
                 entity.Property(e => e.FlightId).HasColumnName("FlightID");
 
                 entity.Property(e => e.AirlineId).HasColumnName("AirlineID");
 
                 entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.EndDateTime).HasColumnType("datetime");
+
+                entity.Property(e => e.FlightNumber)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.Createddate).HasColumnType("datetime");
+                entity.Property(e => e.FromPlace)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.InstrumentUsed)
-                    .HasMaxLength(500)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.UpadatedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-            });
-
-            modelBuilder.Entity<MealInfo>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToTable("MealInfo");
-
-                entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
+                entity.Property(e => e.IsMealAvailable)
+                    .HasMaxLength(10)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+                entity.Property(e => e.RemainingBc).HasColumnName("RemainingBC");
 
-                entity.Property(e => e.FlightId).HasColumnName("FlightID");
+                entity.Property(e => e.RemainingNonBc).HasColumnName("RemainingNonBC");
 
-                entity.Property(e => e.MealId).HasColumnName("MealID");
+                entity.Property(e => e.StartDateTime).HasColumnType("datetime");
 
-                entity.Property(e => e.MealName)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.MealType)
-                    .HasMaxLength(200)
+                entity.Property(e => e.ToPlace)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
                 entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Passenger>(entity =>
@@ -150,86 +160,81 @@ namespace CoreModels.Models
                 entity.Property(e => e.PassengerId).HasColumnName("PassengerID");
 
                 entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Gender)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+                entity.Property(e => e.MealType)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.PassengerName)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.Pnr).HasColumnName("PNR");
+
+                entity.Property(e => e.SeatType)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.UpdatedBy)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("User");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.Property(e => e.ContactNumber)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(50)
+                    .IsFixedLength(true);
 
                 entity.Property(e => e.Gender)
                     .HasMaxLength(10)
                     .IsFixedLength(true);
 
-                entity.Property(e => e.MealId)
-                    .HasMaxLength(10)
-                    .HasColumnName("MealID")
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.PassengerName)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
-            });
-
-            modelBuilder.Entity<Schedule>(entity =>
-            {
-                entity.ToTable("Schedule");
-
-                entity.Property(e => e.ScheduleId).HasColumnName("ScheduleID");
-
-                entity.Property(e => e.EndDateTime).HasColumnType("datetime");
-
-                entity.Property(e => e.FlightId).HasColumnName("FlightID");
-
-                entity.Property(e => e.FromPlace)
-                    .IsRequired()
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.MealId).HasColumnName("MealID");
-
-                entity.Property(e => e.StartDateTime).HasColumnType("datetime");
-
-                entity.Property(e => e.ToPlace)
-                    .IsRequired()
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-            });
-
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.Property(e => e.UserId).HasColumnName("UserID");
-
-                entity.Property(e => e.CreatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.CreatedDate).HasColumnType("date");
-
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(500)
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
                 entity.Property(e => e.Password)
-                    .IsRequired()
-                    .HasMaxLength(500)
+                    .HasMaxLength(50)
                     .IsFixedLength(true);
 
                 entity.Property(e => e.UpdatedBy)
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.UpdatedDate).HasColumnType("date");
-
-                entity.Property(e => e.UserName)
-                    .IsRequired()
-                    .HasMaxLength(500)
-                    .IsFixedLength(true);
+                entity.Property(e => e.UpdatedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             OnModelCreatingPartial(modelBuilder);

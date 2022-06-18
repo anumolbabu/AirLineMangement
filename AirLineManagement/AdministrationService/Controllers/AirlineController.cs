@@ -33,14 +33,15 @@ namespace AdministrationService.Controllers
         /// <param name="airLine">Details of airline</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("addairline")]
+        [Route("add")]
         public IActionResult AddAirline(Airline airLine)
         {
-            if (! _airlineService.Create(airLine))
+            var result = _airlineService.Create(airLine);
+            if (result==null)
             {
                 return BadRequest("Failed to add Airline");
             }
-            return Ok(airLine);
+            return Ok(result);
         }
 
         /// <summary>
@@ -49,14 +50,15 @@ namespace AdministrationService.Controllers
         /// <param name="airLine">Details of airline</param>
         /// <returns></returns>
         [HttpPost]
-        [Route("editairline")]
-        public IActionResult EditAirlineAsync(Airline airLine)
+        [Route("edit")]
+        public IActionResult EditAirline(Airline airLine)
         {
-            if (! _airlineService.Edit(airLine))
+            var result = _airlineService.Edit(airLine);
+            if (result==null)
             {
                 return BadRequest("Failed to edit Airline");
             }
-            return Ok(airLine);
+            return Ok(result);
         }
 
         /// <summary>
@@ -76,7 +78,7 @@ namespace AdministrationService.Controllers
         }
 
         [HttpGet]
-        [Route("getairlines")]
+        [Route("getall")]
         public IActionResult GetAll()
         {
             List<Airline> airlines = new List<Airline>();
@@ -87,7 +89,7 @@ namespace AdministrationService.Controllers
 
 
         [HttpPost]
-        [Route("getairlinebyid")]
+        [Route("getbyid")]
         public IActionResult GetAirline(int airlineid)
         {
             Airline airlines = new Airline();

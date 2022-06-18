@@ -10,34 +10,38 @@ namespace UserManagerService.Services
 {
     public class RegistrationService : IRegistrationService
     {
-        private readonly AirLineDBContext _airLineDBContext;
+        private readonly AirlineDBContext _airLineDBContext;
 
-        public RegistrationService(AirLineDBContext airLineDBContext)
+        public RegistrationService(AirlineDBContext airLineDBContext)
         {
             _airLineDBContext = airLineDBContext;
 
         }
 
-        public User Register(LoginUserData loggedinuser)
+        public User Register(RegisterUserData registerUser)
         {
             User user = new User();
-            user.UserName = loggedinuser.UserName;
-            user.Email = loggedinuser.Email;
-            user.Password = loggedinuser.Password;
-            user.IsDeleted = 0;
+            user.Email = registerUser.Email;
+            user.Password = registerUser.Password;
+            user.Name = registerUser.Name;
+            user.Gender = registerUser.Gender;
+            user.Age = registerUser.Age;
+            user.ContactNumber = registerUser.ContactNumber;
+
             user.Role = 2;
-            user.CreatedBy = loggedinuser.UserName;
+            user.IsActive = 1;
+            user.CreatedBy = registerUser.Email;
             user.CreatedDate = System.DateTime.UtcNow;
-            user.UpdatedBy = loggedinuser.UserName;
+            user.UpdatedBy = registerUser.Email;
             user.UpdatedDate = System.DateTime.UtcNow;
            
-            var UserExist= _airLineDBContext.Users.Any(x => x.UserName == user.UserName);
+            var UserExist= _airLineDBContext.Users.Any(x => x.Email == user.Email);
               
             if(!UserExist)
             {
                 _airLineDBContext.Users.Add(user);
                 _airLineDBContext.SaveChanges();
-                User currentuser = _airLineDBContext.Users.Where(x => x.UserName == user.UserName && x.Password == user.Password).FirstOrDefault();
+                User currentuser = _airLineDBContext.Users.Where(x => x.Email == user.Email && x.Password == user.Password).FirstOrDefault();
                 return currentuser;
             }
             else

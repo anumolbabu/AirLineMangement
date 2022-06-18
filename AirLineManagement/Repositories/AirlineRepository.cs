@@ -11,10 +11,10 @@ namespace Repositories
 {
     public class AirlineRepository : IAirlineRepository
     {
-        AirLineDBContext _airLineDBContext;
-        public AirlineRepository(AirLineDBContext airLineDBContext)
+        AirlineDBContext _airlineDBContext;
+        public AirlineRepository(AirlineDBContext airlineDBContext)
         {
-        _airLineDBContext=airLineDBContext;
+        _airlineDBContext= airlineDBContext;
         }
 
         /// <summary>
@@ -22,26 +22,38 @@ namespace Repositories
         /// </summary>
         /// <param name="airline">airline</param>
         /// <returns></returns>
-        public bool Create(Airline airline)
+        public Airline Create(Airline airline)
         {
-            _airLineDBContext.Airlines.Add(airline);
-            int success= _airLineDBContext.SaveChanges();
-            if(success==0)
-            {
-                return true;
-            }
-            return true;
-        }
+            //Airline airline1 = new Airline();
+            airline.IsBlocked = 0;
+            airline.CreatedBy = "User";
+            airline.CreatedDate = System.DateTime.UtcNow;
+            airline.UpdatedBy = "User";
+            airline.UpdatedDate = System.DateTime.UtcNow;
 
-        public bool Edit(Airline airline)
-        {
-            _airLineDBContext.Airlines.Update(airline);
-            int success =  _airLineDBContext.SaveChanges();
+            //airline.
+            _airlineDBContext.Airlines.Add(airline);
+            int success= _airlineDBContext.SaveChanges();
             if (success == 0)
             {
-                return true;
+                throw new Exception("Failed to add airline data");
             }
-            return true;
+            var currentairline = _airlineDBContext.Airlines.Where(x => x.AirlineName == airline.AirlineName && x.ContactNumber==airline.ContactNumber).FirstOrDefault();
+            return currentairline;
+        }
+
+        public Airline Edit(Airline airline)
+        {
+            airline.UpdatedBy = "User";
+            airline.UpdatedDate = System.DateTime.UtcNow;
+            _airlineDBContext.Airlines.Update(airline);
+            int success = _airlineDBContext.SaveChanges();
+            if (success == 0)
+            {
+                throw new Exception("Failed to update airline data");
+            }
+            var currentairline = _airlineDBContext.Airlines.Where(x => x.AirlineId == airline.AirlineId).FirstOrDefault();
+            return currentairline;
         }
 
         /// <summary>
@@ -51,9 +63,9 @@ namespace Repositories
         /// <returns></returns>
         public bool Delete(int airlineId)
         {
-            var airline =  _airLineDBContext.Airlines.Where(x => x.AirlineId == airlineId).FirstOrDefault();
-            _airLineDBContext.Airlines.Remove(airline);
-            int success =  _airLineDBContext.SaveChanges();
+            var airline = _airlineDBContext.Airlines.Where(x => x.AirlineId == airlineId).FirstOrDefault();
+            _airlineDBContext.Airlines.Remove(airline);
+            int success = _airlineDBContext.SaveChanges();
             if (success == 0)
             {
                 return true;
@@ -65,12 +77,12 @@ namespace Repositories
 
         public Airline GetById(int airlineId)
         {
-            return _airLineDBContext.Airlines.Find(airlineId);
+            return _airlineDBContext.Airlines.Find(airlineId);
         }
 
         public IEnumerable<Airline> GetAll()
         {
-            return _airLineDBContext.Airlines.ToList();
+            return _airlineDBContext.Airlines.ToList();
         }
     }
 }

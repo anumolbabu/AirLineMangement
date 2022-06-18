@@ -50,4 +50,3 @@ D:\CaseStudy\AirLineManagement\AirlineAPIGateway\obj\Debug\netcoreapp3.1\Airline
 D:\CaseStudy\AirLineManagement\AirlineAPIGateway\obj\Debug\netcoreapp3.1\AirlineAPIGateway.dll
 D:\CaseStudy\AirLineManagement\AirlineAPIGateway\obj\Debug\netcoreapp3.1\AirlineAPIGateway.pdb
 D:\CaseStudy\AirLineManagement\AirlineAPIGateway\obj\Debug\netcoreapp3.1\AirlineAPIGateway.genruntimeconfig.cache
-D:\CaseStudy\AirLineManagement\AirlineAPIGateway\obj\Debug\netcoreapp3.1\AirlineAPIGateway.csproj.AssemblyReference.cache
