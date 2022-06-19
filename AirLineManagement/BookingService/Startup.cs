@@ -29,7 +29,7 @@ namespace BookingService
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddDbContext<AirLineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
+            services.AddDbContext<AirlineDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AirlineDBConnection")));
             services.AddConsulConfig(Configuration);
         }
 

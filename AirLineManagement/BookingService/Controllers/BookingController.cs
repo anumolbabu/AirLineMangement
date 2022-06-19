@@ -28,6 +28,7 @@ namespace BookingService.Controllers
             bookingrequestData.UserId = bookingRequest.UserId;
             bookingrequestData.IsOneway = bookingRequest.IsOneway;
             bookingrequestData.BookingStatus = 1;
+            bookingrequestData.TotalSeat = bookingRequest.TotalSeat;
             bookingrequestData.CreatedBy = bookingRequest.UserName;
             bookingrequestData.CreatedDate = System.DateTime.UtcNow;
             bookingrequestData.UpdatedBy = bookingRequest.UserName;
@@ -44,10 +45,10 @@ namespace BookingService.Controllers
 
 
 
-            Passenger passenger = new Passenger();
+            Passenger passenger;
             foreach (var passengerdata in bookingRequest.Passengers)
             {
-
+                passenger = new Passenger();
                 passenger.Pnr = currentBookingData.Pnr;
 
                 passenger.PassengerName = passengerdata.PassengerName;
@@ -91,7 +92,7 @@ namespace BookingService.Controllers
                                     flight.StartDateTime,
                                     flight.EndDateTime,
                                     passengerCount = bookingrequestData.TotalSeat,
-                                    totalCost = flight.TicketCost * bookingrequestData.TotalSeat
+                                    totalCost = (flight.TicketCost * bookingrequestData.TotalSeat)
                                 }).ToList();
 
             return Ok(responsedata);
@@ -99,13 +100,15 @@ namespace BookingService.Controllers
 
         [HttpPost]
         [Route("cancel")]
-        public IActionResult CancelBooking(int pnr)
+        public IActionResult CancelBooking(int pnr, string username)
         {
             try
             {
                 Booking bookingData = _airlineDBContext.Bookings.Where(x => x.Pnr == pnr).FirstOrDefault();
 
                 bookingData.BookingStatus = 0;
+                bookingData.UpdatedBy = username;
+                bookingData.UpdatedDate = System.DateTime.UtcNow;
 
                 _airlineDBContext.Update(bookingData);
                 var x = _airlineDBContext.SaveChanges();
@@ -150,21 +153,30 @@ namespace BookingService.Controllers
                                  select new
                                  {
                                      airlinename=airline.AirlineName,
-                                     flight.FlightNumber,
-                                     flight.FromPlace,
-                                     flight.ToPlace,
-                                     flight.StartDateTime,
-                                     flight.EndDateTime,
-                                     booking.BookingStatus,
-                                     booking.Pnr,
-                                     booking.TotalSeat,
-                                     booking.IsOneway,
-                                     TotalCost=booking.TotalSeat*flight.TicketCost                              }
+                                     flightnumber=flight.FlightNumber,
+                                     fromplace=flight.FromPlace,
+                                     toplace=flight.ToPlace,
+                                     startdatetime=flight.StartDateTime,
+                                     enddatetime=flight.EndDateTime,
+                                     bookingstatus=booking.BookingStatus,
+                                     pnr=booking.Pnr,
+                                     totalseat=booking.TotalSeat,
+                                     isoneway=booking.IsOneway,
+                                     totalcost=booking.TotalSeat*flight.TicketCost                              }
                               ).ToList();
 
-
+            
 
             return Ok(historyResult);
+        }
+
+        [HttpPost]
+        [Route("getpassengers")]
+        public IActionResult GetPassengers(int pnr)
+        {
+            IEnumerable<Passenger>  passengerdetails=_airlineDBContext.Passengers.Where(x => x.Pnr == pnr).ToList();
+
+            return Ok(passengerdetails);
         }
 
     }
